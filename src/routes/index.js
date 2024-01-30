@@ -1,8 +1,10 @@
 import * as express from "express"
 import positionRouter from './position.routes.js'
+import departamentRouter from './departament.routes.js'
 
 const router = express.Router()
 router.use('/positions', positionRouter)
+router.use('/departaments', departamentRouter)
 
 router.get('/', (req, res) => {
     res.send({
