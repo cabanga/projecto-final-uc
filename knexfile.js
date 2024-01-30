@@ -1,7 +1,6 @@
-require("dotenv").config()
+import 'dotenv/config'
 
-module.exports = {
-
+const configs = {
     development: {
         client: "mysql2",
         connection: {
@@ -18,5 +17,6 @@ module.exports = {
             tableName: 'knex_migrations'
         }
     }
+}
 
-};
+export default configs

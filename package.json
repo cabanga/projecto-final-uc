@@ -1,6 +1,7 @@
 {
   "name": "MiniProj3",
   "version": "1.0.0",
+  "type": "module",
   "main": "server.js",
   "author": "cabanga <manucabanga@gmail.com>",
   "license": "MIT",

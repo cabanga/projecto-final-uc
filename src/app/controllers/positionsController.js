@@ -1,8 +1,8 @@
-var positionModel = require('../models/positionModel')
+import Position from '../models/Position.js'
 
-exports.index = async (req, res) => {
+export const index = async (req, res) => {
     try {
-        let result = await positionModel.index()
+        let result = await Position.index()
         res.status(200)
         .send(result)
     } catch (err) {
@@ -11,10 +11,10 @@ exports.index = async (req, res) => {
     }
 }
 
-exports.show = async (req, res) => {
+export const show = async (req, res) => {
     try {
         let id = req.params.id
-        let result = await positionModel.show( id )
+        let result = await Position.show( id )
         res.status(200)
         .send( result )
     } catch (err) {
@@ -23,10 +23,10 @@ exports.show = async (req, res) => {
     }
 }
 
-exports.create = async (req, res) => {
+export const create = async (req, res) => {
     try {
         let body = req.body
-        let result = await positionModel.create( body )
+        let result = await Position.create( body )
 
         res.status(200)
         .send(result)
@@ -36,14 +36,13 @@ exports.create = async (req, res) => {
     }
 }
 
-exports.update = async (req, res) => {
+export const update = async (req, res) => {
     try {
         let id = req.params.id
 
         let body = req.body
-        let result = await positionModel.update( id, body )
+        let result = await Position.update( id, body )
 
-        console.log( result )
         res.status(200)
         .send(result)
     } catch (err) {

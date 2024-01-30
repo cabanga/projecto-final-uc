@@ -1,7 +1,7 @@
-const DATABASE = require('../../config/database')
+import DATABASE from '../../config/database.js'
 
+export default {
 
-module.exports = {
     async index(){
         let response = await DATABASE
         .select('*')
@@ -26,6 +26,7 @@ module.exports = {
 
         return response
     },
+
     async update(id, data ){
         await DATABASE
         .from('positions')
@@ -40,3 +41,5 @@ module.exports = {
         return response
     }
 }
+
+
