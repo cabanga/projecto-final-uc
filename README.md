@@ -47,4 +47,55 @@ Essas entidades trabalham em conjunto para garantir que o processo de avaliaçã
 
 
 
+A minha proposta como projecto final é desenvolver um sistema de avaliação de desempenho, em que dada a definição de metas e objetivos macro, definimos as avaliações associadas as essas metas e objetivos para sabermos como vai o desenvolvimento e o desempenho de um colaborador.
 
+1. Metas/ Objetivos
+
+2. Colaboradores
+
+3. Avaliações
+
+4. Pontuações associadas as avaliações
+
+Boa noite João.
+Sim, a proposta para o tema é adequada ao projeto final.
+Será importante o sistema contemplar avaliadores e avaliados (neste caso julgo serem os colaboradores).
+Os objetivos deverão conter um peso para o cálculo da pontuação final.
+Será importante a avaliação de cada objetivo poder conter um texto associado para poder, no final da avaliação, produzir um relatório para o avaliado.
+Veja se concorda com as sugestões e avance com o trabalho.
+Cumprimentos.
+
+
+
+
+
+positions
+   name
+   description
+
+departaments
+   name:string
+   description:string
+
+goals
+   name:string
+   description:string
+
+metrics
+   goal_id:foreign
+   description:string
+   score:integer
+
+employees
+   name:string
+   is_assess:boolean
+   position_id:foreign
+   departament_id:foreign
+
+assessments
+   was_finish:boolean
+   employee_id:foreign
+   metric_id:foreign
+   employee_score:integer
+   supervisor_score:integer
+   media_score:integer
