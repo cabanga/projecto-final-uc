@@ -47,16 +47,4 @@ Essas entidades trabalham em conjunto para garantir que o processo de avaliaçã
 
 
 
-exports.up = function(knex) {
-    return knex.schema
-    .createTable("organisations", (table) => {
-        table.increments("id").primary();
-        table.string("name").notNullable();
-        table.timestamps(true, true);
-    })
-};
 
-exports.down = function(knex) {
-    return knex.schema
-    .dropTableIfExists("organisations");
-};
