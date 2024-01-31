@@ -1,0 +1,53 @@
+import Goal from '../models/Goal.js'
+
+export const index = async (req, res) => {
+    try {
+        let result = await Goal.index()
+        res.status(200)
+        .send(result)
+    } catch (err) {
+        console.log(err)
+        res.status(500).send({ errors: err })
+    }
+}
+
+export const show = async (req, res) => {
+    try {
+        let id = req.params.id
+        let result = await Goal.show( id )
+        res.status(200)
+        .send( result )
+    } catch (err) {
+        console.log(err)
+        res.status(500).send({ errors: err })
+    }
+}
+
+export const create = async (req, res) => {
+    try {
+        let body = req.body
+        let result = await Goal.create( body )
+
+        res.status(200)
+        .send(result)
+    } catch (err) {
+        console.log(err)
+        res.status(500).send({ errors: err })
+    }
+}
+
+export const update = async (req, res) => {
+    try {
+        let id = req.params.id
+
+        let body = req.body
+        let result = await Goal.update( id, body )
+
+        res.status(200)
+        .send(result)
+    } catch (err) {
+        console.log(err)
+        res.status(500).send({ errors: err })
+    }
+}
+
