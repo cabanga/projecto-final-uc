@@ -3,6 +3,7 @@ import positionRouter from './position.routes.js'
 import departamentRouter from './departament.routes.js'
 import goalRouter from './goal.routes.js'
 import metricRouter from './metric.routes.js'
+import employeeRouter from './employee.routes.js'
 
 const router = express.Router()
 
@@ -10,6 +11,7 @@ router.use('/positions', positionRouter)
 router.use('/departaments', departamentRouter)
 router.use('/goals', goalRouter)
 router.use('/metrics', metricRouter)
+router.use('/employees', employeeRouter)
 
 router.get('/', (req, res) => {
     res.send({
