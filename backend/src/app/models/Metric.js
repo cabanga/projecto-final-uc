@@ -4,8 +4,12 @@ export default {
 
     async index(){
         let response = await DATABASE
-        .select('*')
+        .select(
+            'metrics.*',
+            'goals.name AS goal_name'
+        )
         .from('metrics')
+        .leftJoin('goals', 'goals.id', 'metrics.goal_id')
 
         return response
     },
